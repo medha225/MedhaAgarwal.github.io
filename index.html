@@ -1,1 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medha Agarwal | Data Analyst</title>
+<meta name="description" content="Portfolio of Medha Agarwal, data analyst with a background in electrical, instrumentation and control engineering.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">Medha Agarwal</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Medha Agarwal</h1>
+        <p class="role">Data Analyst</p>
+        <p class="intro">Data analyst with a background in electrical, instrumentation and control engineering. I work with Excel, Python, SQL and Power BI, and bring over 13 years of engineering experience to turning data into decisions.</p>
+        <p class="avail">Available immediately</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:medaga12@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/medhaagarwal1" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/medha225" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <img class="photo" src="Photo.PNG" alt="Portrait of Medha Agarwal" width="300" height="400">
+    </div>
+  </section>
+
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <h2 id="projects-title">Projects</h2>
+      <div class="tabs" role="tablist" aria-label="Project areas">
+        <button class="tab" role="tab" id="tab-da" aria-controls="panel-da" aria-selected="true">Data Analyst</button>
+        <button class="tab" role="tab" id="tab-ic" aria-controls="panel-ic" aria-selected="false" tabindex="-1">Electrical, Instrumentation and Control Engineer</button>
+      </div>
+
+      <div class="panel" id="panel-da" role="tabpanel" aria-labelledby="tab-da">
+        <p class="stack-label">Tech stack</p>
+        <ul class="chips">
+          <li>Excel</li><li>Python</li><li>SQL</li><li>Power BI</li>
+        </ul>
+        <div class="cards">
+          <article class="card">
+            <h3>Project 1</h3>
+            <p>In progress</p>
+            <a class="plink" href="#">Project link</a>
+          </article>
+          <article class="card">
+            <h3>Project 2</h3>
+            <p>In progress</p>
+            <a class="plink" href="#">Project link</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-ic" role="tabpanel" aria-labelledby="tab-ic" hidden>
+        <p class="stack-label">Tech stack</p>
+        <ul class="chips">
+          <li>Instrumentation Designer</li><li>Electrical Control Panels</li><li>EngineeringBase</li><li>EPlan</li><li>AutoCAD</li>
+        </ul>
+        <div class="cards">
+          <article class="card">
+            <h3>Project 1</h3>
+            <p>In progress</p>
+            <a class="plink" href="#">Project link</a>
+          </article>
+          <article class="card">
+            <h3>Project 2</h3>
+            <p>In progress</p>
+            <a class="plink" href="#">Project link</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Get in touch</h2>
+      <p>I'm available immediately. The quickest way to reach me is by email.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:medaga12@gmail.com">medaga12@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/medhaagarwal1" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Medha Agarwal</div>
+</footer>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+    function select(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        next.focus();
+        select(next);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
